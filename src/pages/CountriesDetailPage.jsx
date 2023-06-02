@@ -111,11 +111,7 @@ const CountriesDetailPage = () => {
               {countryData?.borders.map((border, index) => {
                 return (
                   <div className="bg-white px-8 rounded-md" key={index}>
-                    {border ? (
-                      border.toLowerCase()
-                    ) : (
-                      <div>No border countries</div>
-                    )}
+                    {border.toLowerCase()}
                   </div>
                 );
               })}
