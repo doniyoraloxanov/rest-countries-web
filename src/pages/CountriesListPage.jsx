@@ -47,27 +47,36 @@ const CountriesListPage = () => {
 
   const renderedCountries = result.map((country, index) => {
     return (
-      <div key={index} className="flex flex-col bg-white shadow-lg">
+      <div
+        key={index}
+        className="flex flex-col bg-white shadow-lg dark:bg-darkblue"
+      >
         <Link to={`/details/${country.name.common}`}>
           <img src={country.flags.png} className="mb-4 w-[384px] h-[150px] " />
           <div className="mx-6 pb-8 ">
-            <h1 className="text-[18px] font-bold  mb-3">
+            <h1 className="text-[18px] font-bold  mb-3 dark:text-gray-100">
               {country.name.common}
             </h1>
             <div className="flex  flex-col space-y-1">
               <div className="flex items-center space-x-2">
-                <p className=" text-md font-medium">Population</p>
-                <p>{country.population}</p>
+                <p className=" text-md font-medium  dark:text-gray-100">
+                  Population
+                </p>
+                <p className=" dark:text-gray-300">{country.population}</p>
               </div>
 
               <div className="flex items-center space-x-2">
-                <p className=" text-md font-medium ">Region</p>
-                <p>{country.region}</p>
+                <p className=" text-md font-medium   dark:text-gray-100">
+                  Region
+                </p>
+                <p className=" dark:text-gray-300">{country.region}</p>
               </div>
 
               <div className="flex items-center space-x-2">
-                <p className=" text-md font-medium">Capital</p>
-                <p>{country.capital}</p>
+                <p className=" text-md font-medium  dark:text-gray-100">
+                  Capital
+                </p>
+                <p className=" dark:text-gray-300">{country.capital}</p>
               </div>
             </div>
           </div>
@@ -77,13 +86,13 @@ const CountriesListPage = () => {
   });
 
   return (
-    <div className="flex flex-col items-center lg:items-start">
+    <div className="flex flex-col items-center lg:items-start ">
       <div className=" mb-16 lg:ml-36 flex flex-col space-y-4 lg:flex-row lg:space-y-0 lg:space-x-[790px]">
         <SearchBar onSearch={getValue} />
         <Dropdown options={options} value={selection} onChange={handleSelect} />
       </div>
 
-      <div className="grid  md:grid-cols-3 md:gap-8   gap-y-8 lg:grid-cols-4 lg:gap-16 max-w-[300px] md:max-w-[800px] lg:max-w-[1400px] mx-auto">
+      <div className="grid   md:grid-cols-3 md:gap-8   gap-y-8 lg:grid-cols-4 lg:gap-16 max-w-[300px] md:max-w-[800px] lg:max-w-[1400px] mx-auto">
         {renderedCountries}
       </div>
     </div>
