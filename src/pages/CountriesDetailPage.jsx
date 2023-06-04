@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useThunk } from "../hooks/use-thunk";
 import { fetchCountriesDetails } from "../store";
+import Dropdown from "../components/DropDown";
 
 const CountriesDetailPage = () => {
   const params = useParams();
@@ -25,15 +26,15 @@ const CountriesDetailPage = () => {
   console.log(countryData);
   return (
     <div className=" flex justify-center pt-20 lg:justify-normal  lg:pt-32  relative ">
-      <article className="lg:flex lg:space-x-48">
+      <article className="lg:flex lg:space-x-40">
         <Link to="/">
-          <button className="bg-white px-12 py-1.5 rounded-md absolute top-0  lg:left-[190px] flex items-center space-x-2">
+          <button className="bg-white px-12 py-1.5 rounded-md absolute top-0  lg:left-[160px] flex items-center space-x-2">
             <GoArrowLeft className=" text-xl" /> <span>Back</span>
           </button>
         </Link>
         <img
           src={countryData?.flags?.png}
-          className="w-[350px] h-[250px] mb-8  lg:w-[500px] lg:h-[350px] "
+          className="w-[350px] h-[250px] mb-8  lg:w-[600px] lg:h-[350px] "
         />
         <div className="lg:pt-6">
           <h1 className="text-2xl font-bold mb-4">

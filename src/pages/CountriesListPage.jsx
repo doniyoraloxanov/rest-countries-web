@@ -4,9 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useThunk } from "../hooks/use-thunk";
 import { Link } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
+import Dropdown from "../components/DropDown";
 
 const CountriesListPage = () => {
   const [title, setTitle] = useState("");
+  const [selection, setSelection] = useState(null);
   const [doFetchCountries, isLoadingCountries, loadingCountriesError] =
     useThunk(fetchCountries);
 
@@ -22,7 +24,24 @@ const CountriesListPage = () => {
     setTitle(title);
   };
 
+  const handleSelect = (option) => {
+    setSelection(option);
+  };
+
+  const options = [
+    { label: "Africa", value: "africa" },
+    { label: "America", value: "america" },
+    { label: "Asia", value: "asia" },
+    { label: "Europe", value: "europe" },
+    { label: "Oceania", value: "oceania" },
+  ];
+
+  console.log(selection);
   const result = data.filter((country) => {
+    if (selection) {
+      return country.region.includes(selection?.label);
+    }
+
     return country.name.common.toLowerCase().includes(title.toLowerCase());
   });
 
@@ -40,10 +59,12 @@ const CountriesListPage = () => {
                 <p className=" text-md font-medium">Population</p>
                 <p>{country.population}</p>
               </div>
+
               <div className="flex items-center space-x-2">
                 <p className=" text-md font-medium ">Region</p>
                 <p>{country.region}</p>
               </div>
+
               <div className="flex items-center space-x-2">
                 <p className=" text-md font-medium">Capital</p>
                 <p>{country.capital}</p>
@@ -57,8 +78,9 @@ const CountriesListPage = () => {
 
   return (
     <div className="flex flex-col items-center lg:items-start">
-      <div className=" mb-24 lg:ml-36">
+      <div className=" mb-16 lg:ml-36 flex flex-col space-y-4 lg:flex-row lg:space-y-0 lg:space-x-[790px]">
         <SearchBar onSearch={getValue} />
+        <Dropdown options={options} value={selection} onChange={handleSelect} />
       </div>
 
       <div className="grid  md:grid-cols-3 md:gap-8   gap-y-8 lg:grid-cols-4 lg:gap-16 max-w-[300px] md:max-w-[800px] lg:max-w-[1400px] mx-auto">

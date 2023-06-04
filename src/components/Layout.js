@@ -6,7 +6,7 @@ const Layout = () => {
     <div className="">
       <nav className="flex justify-between py-8  px-8 bg-white shadow-md">
         <p>Where in the world?</p>
-        <p>Drak Mode</p>
+        <p>Dark Mode</p>
       </nav>
       <div className="pt-10">
         <Outlet />
