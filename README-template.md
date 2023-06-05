@@ -17,7 +17,7 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/doniyoraloxanov/Entertainment-web-app.git
+$ git clone https://github.com/doniyoraloxanov/rest-countries-web.git
 
 # Installing all the dependencies
 $ npm install
@@ -46,7 +46,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: https://entertainment-web-app-kappa.vercel.app/
+- Live Site URL: https://rest-countries-web.vercel.app/
 
 ## My process
 
