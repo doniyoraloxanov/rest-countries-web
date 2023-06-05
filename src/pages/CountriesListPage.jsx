@@ -87,7 +87,7 @@ const CountriesListPage = () => {
 
   return (
     <div className="flex flex-col items-center lg:items-start ">
-      <div className=" mb-16 lg:ml-36 flex flex-col space-y-4 lg:flex-row lg:space-y-0 lg:space-x-[790px]">
+      <div className=" mb-16 lg:ml-36 flex flex-col space-y-8 lg:flex-row lg:space-y-0 lg:space-x-[790px]">
         <SearchBar onSearch={getValue} />
         <Dropdown options={options} value={selection} onChange={handleSelect} />
       </div>

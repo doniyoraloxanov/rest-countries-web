@@ -19,7 +19,7 @@ export default function Switcher() {
         <DarkModeSwitch
           checked={darkSide}
           onChange={toggleDarkMode}
-          size={50}
+          size={35}
           className=" font-bold"
         />
       </div>

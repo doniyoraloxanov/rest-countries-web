@@ -22,7 +22,7 @@ const SearchBar = ({ onSearch }) => {
             value={title}
             onChange={handleChange}
             placeholder="Search for a country"
-            className="block py-4 pl-12 bg-white  w-[420px]  outline-none text-lg rounded-md"
+            className="block py-4 pl-12 bg-white  w-[420px]  outline-none text-lg rounded-md  dark:bg-darkblue dark:text-gray-200"
           />
           <GoSearch className="text-white text-2xl absolute top-4 left-2" />
         </div>

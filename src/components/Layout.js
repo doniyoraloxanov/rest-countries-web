@@ -5,7 +5,7 @@ import Switcher from "./Switcher";
 const Layout = () => {
   return (
     <div className="">
-      <nav className="flex justify-between py-8  px-8 bg-white shadow-md  dark:bg-darkblue">
+      <nav className="flex justify-between py-8  px-12 lg:px-20 bg-white shadow-md  dark:bg-darkblue">
         <p className="dark:text-white">Where in the world?</p>
         <Switcher />
       </nav>

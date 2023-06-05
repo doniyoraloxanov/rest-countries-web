@@ -25,10 +25,10 @@ const CountriesDetailPage = () => {
   const countryData = data.find((country) => country.name.common == params.id);
   console.log(countryData);
   return (
-    <div className=" flex justify-center items-center pt-20 lg:justify-normal  lg:pt-32  relative  px-10">
+    <div className=" flex justify-center items-center pt-20 lg:justify-normal  lg:pt-32  relative  px-10 lg:px-0">
       <article className=" lg:flex lg:space-x-40">
         <Link to="/">
-          <button className="bg-white  px-12 py-1.5 rounded-md absolute top-0  lg:left-[160px] flex items-center space-x-2">
+          <button className="bg-white  px-12 py-1.5 rounded-md absolute top-0  lg:left-[160px] flex items-center space-x-2  dark:bg-darkblue dark:text-gray-300">
             <GoArrowLeft className=" text-xl" /> <span>Back</span>
           </button>
         </Link>

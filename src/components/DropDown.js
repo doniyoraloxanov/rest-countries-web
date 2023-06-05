@@ -32,7 +32,7 @@ function Dropdown({ options, value, onChange }) {
   const renderedOptions = options.map((option) => {
     return (
       <div
-        className="hover:bg-sky-100 rounded cursor-pointer p-1"
+        className="hover:bg-sky-100 rounded cursor-pointer p-1  dark:bg-darkblue"
         onClick={() => handleOptionClick(option)}
         key={option.value}
       >
@@ -44,13 +44,17 @@ function Dropdown({ options, value, onChange }) {
   return (
     <div ref={divEl} className="w-48 relative ">
       <Panel
-        className="flex justify-between items-center cursor-pointer"
+        className="flex justify-between items-center cursor-pointer dark:text-gray-200"
         onClick={handleClick}
       >
         {value?.label || "Filter by Region"}
-        <GoChevronDown className="text-lg" />
+        <GoChevronDown className="text-lg " />
       </Panel>
-      {isOpen && <Panel className="absolute top-full">{renderedOptions}</Panel>}
+      {isOpen && (
+        <Panel className="absolute top-full dark:text-gray-200">
+          {renderedOptions}
+        </Panel>
+      )}
     </div>
   );
 }
